@@ -30,7 +30,7 @@ import { GeoAuditReport, EngineId } from '@/types/geo';
 import { PRESET_BRANDS } from '@/lib/mockData';
 
 export default function HomePage() {
-  const [targetUrl, setTargetUrl] = useState('https://stripe.com');
+  const [targetUrl, setTargetUrl] = useState('https://linear.app');
   const [competitorsInput, setCompetitorsInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [auditReport, setAuditReport] = useState<GeoAuditReport | null>(null);
@@ -39,30 +39,52 @@ export default function HomePage() {
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
+  // Sync and apply theme function
+  function applyTheme(targetTheme: 'dark' | 'light') {
+    if (typeof document === 'undefined') return;
+    if (targetTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
+      if (document.body) {
+        document.body.classList.add('dark');
+        document.body.setAttribute('data-theme', 'dark');
+      }
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.setAttribute('data-theme', 'light');
+      if (document.body) {
+        document.body.classList.remove('dark');
+        document.body.setAttribute('data-theme', 'light');
+      }
+    }
+  }
+
   // Initialize theme from localStorage or system preference
   useEffect(() => {
-    const savedTheme = localStorage.getItem('omnigeo_theme') as 'dark' | 'light' | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.classList.toggle('dark', savedTheme === 'dark');
-    } else {
-      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-      const initialTheme = prefersLight ? 'light' : 'dark';
-      setTheme(initialTheme);
-      document.documentElement.classList.toggle('dark', initialTheme === 'dark');
+    try {
+      const stored = localStorage.getItem('omnigeo_theme') as 'dark' | 'light' | null;
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initial = stored || (prefersDark ? 'dark' : 'light');
+      setTheme(initial);
+      applyTheme(initial);
+    } catch {
+      setTheme('dark');
+      applyTheme('dark');
     }
   }, []);
 
   function toggleTheme() {
     const nextTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(nextTheme);
-    localStorage.setItem('omnigeo_theme', nextTheme);
-    document.documentElement.classList.toggle('dark', nextTheme === 'dark');
+    try {
+      localStorage.setItem('omnigeo_theme', nextTheme);
+    } catch {}
+    applyTheme(nextTheme);
   }
 
-  // Run initial audit on Stripe to ensure first render is rich & impressive
+  // Run initial audit on Linear to match the screenshots
   useEffect(() => {
-    handleRunAudit('https://stripe.com');
+    handleRunAudit('https://linear.app');
   }, []);
 
   async function handleRunAudit(urlToAudit?: string) {
@@ -106,7 +128,10 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#07090e] text-zinc-900 dark:text-zinc-100 flex flex-col font-sans transition-colors duration-200">
+    <div 
+      data-theme={theme}
+      className={`min-h-screen ${theme === 'dark' ? 'dark bg-[#07090e] text-zinc-100' : 'light bg-slate-50 text-zinc-900'} flex flex-col font-sans transition-colors duration-200`}
+    >
       {/* Top Banner / Announcement */}
       <div className="bg-gradient-to-r from-cyan-100/90 via-blue-100/70 to-purple-100/90 dark:from-cyan-950/60 dark:via-blue-950/40 dark:to-purple-950/60 border-b border-cyan-200 dark:border-cyan-800/30 px-4 py-2 text-xs text-center text-cyan-950 dark:text-cyan-300 flex items-center justify-center gap-2">
         <Sparkles className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 animate-pulse" />
@@ -123,7 +148,7 @@ export default function HomePage() {
       </div>
 
       {/* Main Header / Nav */}
-      <header className="border-b border-zinc-200 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-950/60 backdrop-blur-md sticky top-0 z-40 transition-colors duration-200">
+      <header className="border-b border-zinc-200 dark:border-zinc-800/80 bg-white/85 dark:bg-zinc-950/70 backdrop-blur-md sticky top-0 z-40 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
@@ -144,23 +169,24 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2 sm:gap-3">
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
+              type="button"
               aria-label="Toggle light/dark theme"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-800 bg-zinc-100/80 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-xs font-medium text-zinc-700 dark:text-zinc-300 transition-all cursor-pointer shadow-sm"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-xs font-semibold text-zinc-800 dark:text-zinc-200 transition-all cursor-pointer shadow-xs select-none active:scale-95"
               title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
             >
               {theme === 'dark' ? (
                 <>
                   <Sun className="w-4 h-4 text-amber-400" />
-                  <span className="hidden sm:inline">Light</span>
+                  <span className="hidden sm:inline">Light Mode</span>
                 </>
               ) : (
                 <>
                   <Moon className="w-4 h-4 text-cyan-600" />
-                  <span className="hidden sm:inline">Dark</span>
+                  <span className="hidden sm:inline">Dark Mode</span>
                 </>
               )}
             </button>
@@ -170,11 +196,11 @@ export default function HomePage() {
               href="https://github.com/moajez/omnigeo"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 border border-zinc-300 dark:border-zinc-800 text-xs font-medium text-zinc-800 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-all shadow-sm"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 border border-zinc-300 dark:border-zinc-800 text-xs font-semibold text-zinc-800 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-all shadow-xs"
             >
               <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
               <span>Star on GitHub</span>
-              <span className="ml-1 px-1.5 py-0.2 rounded-full bg-white dark:bg-zinc-800 text-[10px] text-yellow-600 dark:text-yellow-400 font-bold border border-yellow-500/40">
+              <span className="ml-0.5 px-1.5 py-0.2 rounded-full bg-white dark:bg-zinc-800 text-[10px] text-yellow-600 dark:text-yellow-400 font-bold border border-yellow-500/40">
                 ★ 33+
               </span>
             </a>
@@ -205,7 +231,7 @@ export default function HomePage() {
                 type="text"
                 value={targetUrl}
                 onChange={(e) => setTargetUrl(e.target.value)}
-                placeholder="Enter URL or brand (e.g. https://stripe.com or supabase.com)"
+                placeholder="Enter URL or brand (e.g. https://linear.app or stripe.com)"
                 className="w-full bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800/80 rounded-xl pl-11 pr-4 py-3 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
                 onKeyDown={(e) => e.key === 'Enter' && handleRunAudit()}
               />
@@ -543,7 +569,7 @@ export default function HomePage() {
                     <div className="p-3.5 rounded-xl bg-white dark:bg-zinc-950/80 border border-cyan-200 dark:border-cyan-900/40 shadow-xs">
                       <span className="text-cyan-700 dark:text-cyan-400 font-bold text-xs">1. Add llms.txt</span>
                       <p className="text-xs text-zinc-600 dark:text-zinc-300 mt-1">
-                        Host <code className="text-cyan-600 dark:text-cyan-300 font-mono">/llms.txt</code> to provide structured markdown for AI scrapers.
+                        Host <code className="text-cyan-600 dark:text-cyan-300 font-mono font-medium">/llms.txt</code> to provide structured markdown for AI scrapers.
                       </p>
                     </div>
 
@@ -926,14 +952,14 @@ export default function HomePage() {
                   <div>
                     <span className="text-[11px] text-zinc-500 font-bold uppercase">Basic Audit:</span>
                     <pre className="p-3 rounded-xl bg-zinc-900 text-cyan-300 border border-zinc-800 font-mono text-xs mt-1">
-                      npx omnigeo audit https://stripe.com
+                      npx omnigeo audit https://linear.app
                     </pre>
                   </div>
 
                   <div>
                     <span className="text-[11px] text-zinc-500 font-bold uppercase">With Competitors & JSON Output:</span>
                     <pre className="p-3 rounded-xl bg-zinc-900 text-cyan-300 border border-zinc-800 font-mono text-xs mt-1">
-                      npm run cli audit https://stripe.com --competitors &quot;Paddle,Adyen&quot; --json
+                      npm run cli audit https://linear.app --competitors &quot;Jira,Asana,Monday&quot; --json
                     </pre>
                   </div>
                 </div>
