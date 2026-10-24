@@ -1,0 +1,53 @@
+{
+  "name": "omnigeo",
+  "version": "1.0.0",
+  "description": "Open Source Generative Engine Optimization (GEO) & Answer Engine Optimization (AEO) Platform. Track brand visibility, share of voice, citations, and optimize content for ChatGPT, Perplexity, Claude & Gemini.",
+  "main": "bin/cli.mjs",
+  "bin": {
+    "omnigeo": "./bin/cli.mjs"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "cli": "node bin/cli.mjs",
+    "mcp": "node bin/mcp.mjs"
+  },
+  "keywords": [
+    "brand-visibility",
+    "generative-engine-optimization",
+    "geo",
+    "aeo",
+    "answer-engine-optimization",
+    "ai-search",
+    "ai-seo",
+    "perplexity",
+    "chatgpt",
+    "citations",
+    "share-of-voice",
+    "mcp",
+    "model-context-protocol"
+  ],
+  "author": "Moajez Lalani",
+  "license": "MIT",
+  "dependencies": {
+    "canvas-confetti": "^1.9.4",
+    "commander": "^14.0.3",
+    "lucide-react": "^1.61.0",
+    "next": "16.4.3",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.3",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
