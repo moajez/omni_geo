@@ -135,21 +135,25 @@ Open Source Generative Engine & Answer Engine Optimization (GEO/AEO)
 
 ---
 
-## 📊 How OmniGEO Compares
+## 📊 How OmniGEO Compares to XanLens & Closed SaaS
 
-| Capability | OmniGEO (Open Source) | XanLens | Closed SaaS ($500-$2,500/mo) |
+OmniGEO was specifically designed to overcome the friction, paywalls, and setup barriers found in tools like **XanLens** and commercial platforms:
+
+| Feature & Architecture | ⚡ OmniGEO (Open Source) | XanLens (xanlens.com) | Closed SaaS ($500-$2,500/mo) |
 |:---|:---:|:---:|:---:|
-| **Pricing** | **100% Free (MIT)** | Free / Freemium | \$500 – \$2,500/mo |
-| **Engines Evaluated** | Perplexity, ChatGPT, Claude, Gemini, DeepSeek | 7 Engines | 2–3 Engines |
-| **Works with Zero API Keys** | ✅ Yes (Simulation Sandbox) | ❌ Requires Gemini key | ❌ Paid account only |
-| **Live API Mode** | ✅ Yes | ✅ Yes | ✅ Yes |
-| **Share of Voice (SOV %)** | ✅ Visual Comparison Bars | ⚠️ Basic | ✅ Yes |
-| **Citation Attribution Map** | ✅ Reddit, G2, Wiki gaps | ⚠️ Partial | ✅ Yes |
-| **Auto `/llms.txt` Generator** | ✅ Built-in 1-Click | ❌ None | ⚠️ Extra add-on |
-| **JSON-LD Schema Generator** | ✅ Speakable & FAQ Schema | ❌ None | ❌ None |
-| **Terminal CLI Tool** | ✅ `npx omnigeo audit <url>` | ❌ None | ❌ None |
-| **Model Context Protocol (MCP)**| ✅ Native MCP Server | ❌ None | ❌ None |
-| **Light & Dark Theme** | ✅ Yes | ❌ Dark only | ⚠️ Varies |
+| **Pricing & Limits** | **100% Free & Unlimited** | $0.99 per audit / Paywalled | \$500 – \$2,500/month |
+| **Zero-Key Sandbox Mode** | ✅ **Works instantly out-of-the-box** | ❌ Broken without Gemini key | ❌ Paid account only |
+| **External DB Requirements** | ✅ **Zero dependencies** (No DB needed) | ❌ Requires Turso LibSQL + Upstash Redis | ❌ Proprietary cloud |
+| **Terminal CLI Tool** | ✅ **Production Ready (`npx omnigeo`)** | ❌ None (*"Not built yet"* in their todo) | ❌ None |
+| **Model Context Protocol (MCP)** | ✅ **Native MCP for Cursor & Claude** | ❌ None | ❌ None |
+| **`llms.txt` Spec Generator** | ✅ **Built-in 1-Click Generator** | ❌ None | ⚠️ Extra add-on |
+| **JSON-LD Schema Markup** | ✅ **Speakable & FAQ Schema** | ❌ Generic text advice | ❌ None |
+| **Inverted Pyramid Answer Snippets** | ✅ **Zero-Click Declarative Copy** | ❌ None | ❌ None |
+| **Multi-Engine Evaluation** | ✅ Perplexity, ChatGPT, Claude, Gemini, DeepSeek | ✅ 7 Engines | 2–3 Engines |
+| **Share of Voice (SOV %)** | ✅ **Visual Competitor Benchmark** | ⚠️ Basic text | ✅ Yes |
+| **Citation Attribution Map** | ✅ **Reddit, G2, Wiki gap detection** | ⚠️ Partial | ✅ Yes |
+| **UI Themes** | ✅ **Interactive Light & Dark Mode** | ❌ Dark Only | ⚠️ Varies |
+| **License** | **Pure MIT Open Source** | Open core / Freemium upsell | Proprietary |
 
 ---
 

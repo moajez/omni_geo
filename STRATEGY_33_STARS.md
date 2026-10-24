@@ -42,9 +42,23 @@ gh repo edit --description "Open-source GEO/AEO audit engine. Track brand visibi
 
 *(Optional but recommended: deploy the Next.js app to Vercel in 60 seconds with `npx vercel` so people can click a live URL directly!)*
 
+## 🥊 Phase 1: The XanLens Competitive Angle (How to Beat 33 Stars)
+
+Your direct benchmark is **XanLens** (`https://xanlens.com` / `FayAndXan/xanlens`), which currently sits at **#2 with 33 stars** on `#brand-visibility`.
+
+Here is the exact competitive messaging that will win over developers:
+
+### Why OmniGEO Crushes XanLens:
+1. **Zero External Infrastructure**: XanLens requires setting up a Turso LibSQL database and Upstash Redis account just to self-host. OmniGEO requires **zero external databases**—it runs anywhere with a single `npm install` and `npm run dev`.
+2. **Instant Zero-Key Mode**: XanLens fails immediately without a Google Gemini API key. OmniGEO features a built-in simulation sandbox so anyone can test brands (Stripe, Linear, Supabase) in 5 seconds without registering any API keys.
+3. **Built-in Terminal CLI**: XanLens explicitly lists CLI support as *"Not built yet"* in their README. OmniGEO includes a production-ready CLI (`npx omnigeo audit <url>`).
+4. **Model Context Protocol (MCP)**: XanLens has no MCP server. OmniGEO includes a native MCP server (`bin/mcp.mjs`) for Cursor, Windsurf, and Claude Desktop.
+5. **Automated Content Fixes (`llms.txt` & Schema)**: XanLens gives generic text feedback. OmniGEO generates the canonical `/llms.txt` file and machine-readable JSON-LD Schema markup in 1 click.
+6. **No Paywalls**: XanLens charges **$0.99 per audit** on `xanlens.com`. OmniGEO is **100% free and open-source under the MIT License**.
+
 ---
 
-## 🎯 Phase 1: High-Conversion Reddit Strategy (Expected: 15–30 Stars)
+## 🎯 Phase 2: High-Conversion Reddit Strategy (Expected: 15–30 Stars)
 
 Reddit is the single fastest place to get organic stars from developers and marketers because everyone is talking about **GEO (Generative Engine Optimization)** right now, and everyone hates that enterprise tools charge \$1,000/month.
 
