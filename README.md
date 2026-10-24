@@ -17,6 +17,10 @@
 
 <br/>
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/moajez/omnigeo)
+
+<br/>
+
 > ⭐️ **If you find OmniGEO helpful, please support the project by dropping a [Star on GitHub](https://github.com/moajez/omnigeo)!**  
 > It helps us remain 100% free, community-driven, and open-source.
 
