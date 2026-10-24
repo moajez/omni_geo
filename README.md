@@ -6,10 +6,10 @@
 
 **Audit, monitor, and optimize what ChatGPT, Perplexity, Claude, Gemini & DeepSeek say about your brand.**
 
-[![GitHub stars](https://img.shields.io/github/stars/moajez/omnigeo?style=for-the-badge&logo=github&color=06b6d4)](https://github.com/moajez/omnigeo/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/moajez/omnigeo?style=for-the-badge&logo=github&color=10b981)](https://github.com/moajez/omnigeo/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/moajez/omnigeo?style=for-the-badge&color=8b5cf6)](https://github.com/moajez/omnigeo/issues)
-[![GitHub license](https://img.shields.io/github/license/moajez/omnigeo?style=for-the-badge)](https://github.com/moajez/omnigeo/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/moajez/omni_geo?style=for-the-badge&logo=github&color=06b6d4)](https://github.com/moajez/omni_geo/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/moajez/omni_geo?style=for-the-badge&logo=github&color=10b981)](https://github.com/moajez/omni_geo/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/moajez/omni_geo?style=for-the-badge&color=8b5cf6)](https://github.com/moajez/omni_geo/issues)
+[![GitHub license](https://img.shields.io/github/license/moajez/omni_geo?style=for-the-badge)](https://github.com/moajez/omni_geo/blob/main/LICENSE)
 [![GitHub topic](https://img.shields.io/badge/topic-brand--visibility-blue?style=for-the-badge&logo=github)](https://github.com/topics/brand-visibility)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
@@ -17,11 +17,11 @@
 
 <br/>
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/moajez/omnigeo)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/moajez/omni_geo)
 
 <br/>
 
-> ⭐️ **If you find OmniGEO helpful, please support the project by dropping a [Star on GitHub](https://github.com/moajez/omnigeo)!**  
+> ⭐️ **If you find OmniGEO helpful, please support the project by dropping a [Star on GitHub](https://github.com/moajez/omni_geo)!**  
 > It helps us remain 100% free, community-driven, and open-source.
 
 <br/>
@@ -163,7 +163,7 @@ OmniGEO was specifically designed to overcome the friction, paywalls, and setup 
 
 ```bash
 # Clone repository
-git clone https://github.com/moajez/omnigeo.git
+git clone https://github.com/moajez/omni_geo.git
 cd omnigeo
 
 # Install dependencies
@@ -299,7 +299,7 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more details.
   <br/>
   <sub>Built with ⚡ by <b>Moajez Lalani</b> • Featured under GitHub topic <a href="https://github.com/topics/brand-visibility">brand-visibility</a></sub>
   <br/><br/>
-  <a href="https://github.com/moajez/omnigeo">
+  <a href="https://github.com/moajez/omni_geo">
     <img src="https://img.shields.io/badge/⭐️_Star_OmniGEO_on_GitHub-06b6d4?style=for-the-badge&logo=github" alt="Star OmniGEO on GitHub"/>
   </a>
 </div>

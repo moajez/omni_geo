@@ -84,7 +84,7 @@ I decided to build and open-source **OmniGEO** — a 100% free, self-hostable AE
 6. Also includes a **CLI** and native **MCP server** for Cursor / Claude Desktop.
 
 It's completely free and MIT-licensed:
-GitHub: https://github.com/moajez/omnigeo
+GitHub: https://github.com/moajez/omni_geo
 
 If you find it useful or want to contribute, please consider dropping a ⭐ star on GitHub — it really helps keep open source alive!
 
@@ -106,7 +106,7 @@ Tech stack:
 - Standalone CLI tool (`npx omnigeo audit <url>`)
 - Model Context Protocol (MCP) server for Cursor & Windsurf
 
-Repo: https://github.com/moajez/omnigeo
+Repo: https://github.com/moajez/omni_geo
 
 Features:
 - Side-by-side prompt responses from 5 models
@@ -126,7 +126,7 @@ Feedback and PRs are super welcome! If you like the project, a star on GitHub wo
 Submit to Hacker News (https://news.ycombinator.com/submit) between **8:00 AM – 11:00 AM EST** (best traffic window):
 
 - **Title**: `Show HN: OmniGEO – Open-source Generative Engine Optimization (GEO) platform`
-- **URL**: `https://github.com/moajez/omnigeo`
+- **URL**: `https://github.com/moajez/omni_geo`
 - **Text (as first comment under your submission)**:
 ```text
 Hey HN!
@@ -140,7 +140,7 @@ It also includes:
 - One-click llms.txt & Speakable JSON-LD generation
 - Terminal CLI and an MCP server for Cursor and Claude Desktop
 
-Repo: https://github.com/moajez/omnigeo
+Repo: https://github.com/moajez/omni_geo
 
 Looking forward to your questions and feedback!
 ```
@@ -164,7 +164,7 @@ Introducing OmniGEO ⚡
 
 100% Free & MIT Licensed.
 
-⭐ Star on GitHub: https://github.com/moajez/omnigeo
+⭐ Star on GitHub: https://github.com/moajez/omni_geo
 
 #GEO #AEO #SEO #OpenSource #AI #buildinpublic
 ```
@@ -192,7 +192,7 @@ Key Features:
 The project is 100% open source under the MIT License.
 
 Check it out and drop a star on GitHub:
-👉 https://github.com/moajez/omnigeo
+👉 https://github.com/moajez/omni_geo
 
 #ArtificialIntelligence #GEO #SEO #OpenSource #SoftwareEngineering #Tech
 ```
@@ -211,7 +211,7 @@ Check it out and drop a star on GitHub:
 3. **GitHub Discussions & Star Exchanges**:
    - Post in GitHub Community discussions under `Open Source Projects Showcase`.
    - Reach out to 10–15 fellow developers on Twitter/LinkedIn who build in public:
-     *"Hey! I built an open-source GEO tool (OmniGEO) for AI search visibility. Would love your candid feedback on the repo: https://github.com/moajez/omnigeo. If you like it, a star would mean a lot!"*
+     *"Hey! I built an open-source GEO tool (OmniGEO) for AI search visibility. Would love your candid feedback on the repo: https://github.com/moajez/omni_geo. If you like it, a star would mean a lot!"*
 
 ---
 

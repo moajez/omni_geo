@@ -193,7 +193,7 @@ export default function HomePage() {
 
             {/* GitHub Star Button */}
             <a
-              href="https://github.com/moajez/omnigeo"
+              href="https://github.com/moajez/omni_geo"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 border border-zinc-300 dark:border-zinc-800 text-xs font-semibold text-zinc-800 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-all shadow-xs"
@@ -1014,7 +1014,7 @@ export default function HomePage() {
             </a>
             <span>•</span>
             <a 
-              href="https://github.com/moajez/omnigeo" 
+              href="https://github.com/moajez/omni_geo" 
               target="_blank" 
               rel="noreferrer"
               className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"

@@ -10,7 +10,7 @@ Thank you for your interest in contributing to **OmniGEO**!
 
 ## Development Workflow
 ```bash
-git clone https://github.com/moajez/omnigeo.git
+git clone https://github.com/moajez/omni_geo.git
 cd omnigeo
 npm install
 npm run dev
